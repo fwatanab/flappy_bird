@@ -1,44 +1,41 @@
-import pygame
-import os
+from kivy.core.image import Image as CoreImage
+from kivy.core.audio import SoundLoader
 
 def load_images():
-	images = {
+	return {
 		"menu": {
-			"title": pygame.image.load("assets/images/title.png"),
-			"start": pygame.image.load("assets/images/start_menu.png"),
-			"icon": pygame.image.load("assets/images/menu_icon.png"),
+			"title": CoreImage("assets/images/title.png").texture,
+			"start": CoreImage("assets/images/start_menu.png").texture,
+			"icon": CoreImage("assets/images/menu_icon.png").texture,
 		},
-		"background": pygame.image.load("assets/images/background.png"),
-		"floor": pygame.image.load("assets/images/floor.png"),
+		"background": CoreImage("assets/images/background.png").texture,
+		"floor": CoreImage("assets/images/floor.png").texture,
 		"bird": [
-			pygame.image.load("assets/images/redbird-downflap.png"),
-			pygame.image.load("assets/images/redbird-midflap.png"),
-			pygame.image.load("assets/images/redbird-upflap.png")
+			CoreImage("assets/images/redbird-downflap.png").texture,
+			CoreImage("assets/images/redbird-midflap.png").texture,
+			CoreImage("assets/images/redbird-upflap.png").texture,
 		],
-		"pipe": pygame.image.load("assets/images/pipe-green.png"),
-		"gameover": pygame.image.load("assets/images/gameover.png"),
+		"pipe": CoreImage("assets/images/pipe-green.png").texture,
+		"gameover": CoreImage("assets/images/gameover.png").texture,
 	}
-	return images
 
 def load_sounds():
-	sounds = {
-		"hit": pygame.mixer.Sound("assets/sounds/hit.wav"),
-		"point": pygame.mixer.Sound("assets/sounds/point.wav"),
-		"wing": pygame.mixer.Sound("assets/sounds/wing.wav"),
+	return {
+		"hit": SoundLoader.load("assets/sounds/hit.wav"),
+		"point": SoundLoader.load("assets/sounds/point.wav"),
+		"wing": SoundLoader.load("assets/sounds/wing.wav"),
 	}
-	return sounds
 
-def load_number_imaes():
-	number_images = [
-		pygame.image.load("assets/images/0.png"),
-		pygame.image.load("assets/images/1.png"),
-		pygame.image.load("assets/images/2.png"),
-		pygame.image.load("assets/images/3.png"),
-		pygame.image.load("assets/images/4.png"),
-		pygame.image.load("assets/images/5.png"),
-		pygame.image.load("assets/images/6.png"),
-		pygame.image.load("assets/images/7.png"),
-		pygame.image.load("assets/images/8.png"),
-		pygame.image.load("assets/images/9.png"),
+def load_number_images():
+	return [
+		CoreImage("assets/images/0.png").texture,
+		CoreImage("assets/images/1.png").texture,
+		CoreImage("assets/images/2.png").texture,
+		CoreImage("assets/images/3.png").texture,
+		CoreImage("assets/images/4.png").texture,
+		CoreImage("assets/images/5.png").texture,
+		CoreImage("assets/images/6.png").texture,
+		CoreImage("assets/images/7.png").texture,
+		CoreImage("assets/images/8.png").texture,
+		CoreImage("assets/images/9.png").texture,
 	]
-	return number_images
